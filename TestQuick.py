@@ -13,10 +13,12 @@ print( QuickSNMP.get( agent_address, ['1.3.6.1.2.1.1.5.0'], hlapi.CommunityData(
 
 # We get interface name and Cisco interface description for all interfaces
 # The last parameter is the OID containing the number of interfaces, so we can loop 'em all!
-its = QuickSNMP.get_bulk_auto( agent_address, [
-  '1.3.6.1.2.1.2.2.1.2 ',
-  '1.3.6.1.2.1.31.1.1.1.18'
-], hlapi.CommunityData( community_name ), '1.3.6.1.2.1.2.1.0' )
+its = QuickSNMP.get_bulk_auto( agent_address,
+  [
+    '1.3.6.1.2.1.2.2.1.2 ',
+    '1.3.6.1.2.1.31.1.1.1.18'
+  ], hlapi.CommunityData( community_name ),
+  '1.3.6.1.2.1.2.1.0' )
 # We print the results in format OID=value
 for it in its:
   for k, v in it.items():

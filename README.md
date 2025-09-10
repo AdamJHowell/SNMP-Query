@@ -1,2 +1,2 @@
 # SNMP-Query
-A simply Python script to query SNMP devices
+A simple Python script to query SNMP devices
